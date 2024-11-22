@@ -1,0 +1,17 @@
+Type inferancing
+
+
+########### Data Types ###########
+
+
+number    | any 
+string    | never
+boolean   | unknown
+
+We called Functions as "functions" in functional programming languages ,in OOP languages we called them as Method
+
+An Interface is a binding contract which bind rules
+
+
+
+JS can have two constructors which has same signature but only one will work
