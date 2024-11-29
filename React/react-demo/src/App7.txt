@@ -1,0 +1,51 @@
+import './App.css'
+import {useState} from "react";
+import ButtonComponentClickProps from "./components/ButtonComponentClickProps.tsx";
+
+function App() {
+
+    const [content, setContent] = useState('Default')
+
+    const handleClick = (name: string) => {
+
+        let description;
+        subjectsList.map((subject) => {
+            if (subject.subjectName === name) {
+                description = subject.subjectDescription
+                setContent(description)
+            }
+        })
+
+        console.log(content)
+    };
+
+
+
+    const subjectsList = [
+        {
+            subjectName: 'RAD',
+            subjectDescription: "Rapid Application Development",
+        },
+        {
+            subjectName: 'OOP',
+            subjectDescription: 'Object Oriented Programming'
+        },
+        {
+            subjectName: 'AAD',
+            subjectDescription: 'Advanced API Development'
+        }
+    ];
+
+
+    return (
+        <>
+            {subjectsList.map((subject) => (
+            <ButtonComponentClickProps onSelect={handleClick}>
+                {subject.subjectName}
+            </ButtonComponentClickProps>
+            ))}
+        </>
+    );
+}
+
+export default App;

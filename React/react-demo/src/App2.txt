@@ -1,0 +1,27 @@
+//Conditional Rendering
+
+
+import './App.css'
+import Dashboard from "./components/Dashboard.tsx";
+import Login from "./components/Login.tsx";
+
+
+function App() {
+    const isLoggedIn = false;
+
+    let content;
+
+    if (isLoggedIn) {
+        content = <Dashboard/>
+    } else {
+        content = <Login/>
+    }
+
+    return (
+        <>
+            {content}
+        </>
+    )
+}
+
+export default App

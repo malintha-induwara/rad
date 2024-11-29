@@ -1,0 +1,15 @@
+import './App.css'
+import Subject from "./components/Subject.tsx";
+
+
+function App() {
+    return (
+        <>
+            <Subject name="RAD">Rapid Application Development</Subject>
+            <Subject name="OOP">Object Oriented Programming</Subject>
+            <Subject name="RAD">Advanced API Development</Subject>
+        </>
+    )
+}
+
+export default App

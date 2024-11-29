@@ -1,0 +1,72 @@
+import './App.css'
+import ButtonComponent, {ButtonComponent2} from "./components/ButtonComponent.tsx";
+import ButtonNameComponent from "./components/ButtonNameComponent.tsx";
+import Item from "./components/Item.tsx"
+import {itemList2}  from  "./Items.ts"
+
+function App() {
+    const count = 10;
+
+    const itemList: { title: string; description: string }[] = [
+        {
+            title: "T1",
+            description: "T1 description",
+        },
+        {
+            title: "T2",
+            description: "T2 description",
+        },
+        {
+            title: "T3",
+            description: "T3 description",
+        },
+        {
+            title: "T4",
+            description: "T4 description",
+        }
+    ]
+
+
+    const itemArray = [];
+
+    for (const item of itemList2) {
+        itemArray.push(<Item title={item.title} description={item.description} ></Item>)
+    }
+
+    return (
+        <>
+            {/*1*/}
+            <p>{count}</p>
+
+            {/*2*/}
+            <p>{(() => "Hello")()}</p>
+
+            {/*3*/}
+            <ButtonComponent/>
+
+            {/*4*/}
+            <ButtonComponent2/>
+
+            {/*5*/}
+            <ButtonNameComponent name={"Hello"}></ButtonNameComponent>
+
+            {/*6*/}
+            <ButtonNameComponent name={"Test"}/>
+
+            {/*7*/}
+            <>
+                {itemList.map((item, index) => (
+                    <Item key={index} title={item.title} description={item.description}/>
+                ))}
+            </>
+
+            {/*8*/}
+            <>
+                {itemArray}
+            </>
+
+        </>
+    )
+}
+
+export default App

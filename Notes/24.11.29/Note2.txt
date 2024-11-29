@@ -1,0 +1,23 @@
+Component name start with Capital latter
+and its must return somehitng
+
+
+Component is a brakdown of applcaion that incluid whole html,css,javascript
+
+JSX -> javascript extention
+
+
+Solid principle
+
+S meaning  single Component is for single task
+
+
+We also use export and defult for variables
+
+
+We mostly use Export defult
+
+
+React router use to render compoent acording to specific url
+
+

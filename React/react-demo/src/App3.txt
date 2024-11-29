@@ -1,0 +1,15 @@
+import './App.css'
+import ButtonNameComponent2 from "./components/ButtonNameComponent2.tsx";
+
+
+function App() {
+    return (
+        <>
+            <ButtonNameComponent2>Click Me</ButtonNameComponent2>
+            <ButtonNameComponent2>Click Me 1</ButtonNameComponent2>
+            <ButtonNameComponent2>Click Me 2</ButtonNameComponent2>
+        </>
+    )
+}
+
+export default App

@@ -1,0 +1,18 @@
+import './App.css'
+import ButtonComponentClickProps from "./components/ButtonComponentClickProps.tsx";
+
+
+function App() {
+
+    const handleClick = (name: string) => {
+        alert(name + "Clicked!");
+    }
+    return (
+        <>
+            <ButtonComponentClickProps onSelect={handleClick} >Button A</ButtonComponentClickProps>
+            <ButtonComponentClickProps onSelect={handleClick}>Button B</ButtonComponentClickProps>
+        </>
+    )
+}
+
+export default App
