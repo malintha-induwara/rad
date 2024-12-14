@@ -1,0 +1,9 @@
+Browser rendering -> to show the code chnage
+You can use anything is use sate
+
+
+Non premetive directly used if its not not it update a copy of data we have to mannually set
+
+
+firstNmae:event.target.avlue,
+lastNmae:event.target.value

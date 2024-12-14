@@ -1,0 +1,41 @@
+import './App.css'
+import {ChangeEvent, useState} from "react";
+
+function App() {
+
+    const [name, setName] = useState({
+        firstName: "Hello",
+        lastName: "World",
+    });
+    //
+    // function handleNameChange(event: ChangeEvent<HTMLInputElement>) {
+    //     setName({
+    //         ...name,
+    //         firstName: event.target.value,
+    //     })
+    //  this will only update the first Name
+    //
+    // }
+
+
+    function handleNameChange(event: ChangeEvent<HTMLInputElement>) {
+        setName({
+            ...name,
+            [event.target.name]: event.target.value,
+        })
+    }
+
+
+    return (
+        //   Instead of <> you can use <Fragment>
+        <>
+            <input name="firstName" type="text" placeholder="First Name" onChange={handleNameChange} />
+            <input name="lastName" type="text" placeholder="Last Name" onChange={handleNameChange} />
+
+            <h1>{name.firstName}</h1>
+            <h1>{name.lastName}</h1>
+        </>
+    )
+}
+
+export default App

@@ -1,0 +1,60 @@
+import './App.css'
+import {useState} from "react";
+import {Customer} from "./Customer.ts";
+
+function App() {
+
+    const [customers,setCustomers]= useState<Customer[]>([]);
+
+    const [name,setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+
+
+    function  addCustomer(){
+        const  newCustomer = new Customer(name,email,phone,address);
+        setCustomers((customers)=>[...customers,newCustomer]);
+    }
+
+    function deleteCustomer(){
+        setCustomers((customers)=> customers.slice(0,-1))
+    }
+
+    function deleteCustomerByEmail(){
+        setCustomers((customers)=> customers.filter(customer => customer.email !== email))
+    }
+
+    function updateCustomer(){
+        setCustomers((customers)=> customers.map((customer)=>{
+            if (customer.email === email){
+                return {...customer, name:name,address:address,email:email,phone:phone}
+            }
+            return customer;
+        }))
+    }
+
+    return (
+        //   Instead of <> you can use <Fragment>
+        <>
+            <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
+            <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+            <input type="text" placeholder="Phone" onChange={(e) => setPhone(e.target.value)} />
+            <input type="text" placeholder="Address" onChange={(e) => setAddress(e.target.value)} />
+            <button onClick={addCustomer} > Add Customer </button>
+            <button onClick={deleteCustomer}>Delete Customer</button>
+            <button onClick={deleteCustomerByEmail}>Delete By Email</button>
+            <button onClick={updateCustomer}>Update Customer</button>
+
+            <div>
+                <h1>Customer Table</h1>
+                {customers.map(customer=>(
+                    <div key={customer.email}> {customer.name} {customer.address} {customer.email} {customer.phone}   </div>
+                ))}
+            </div>
+
+        </>
+    )
+}
+
+export default App

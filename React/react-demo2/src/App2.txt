@@ -1,0 +1,41 @@
+import './App.css'
+import {useState} from "react";
+
+function App() {
+
+    const [name, setName] = useState({
+        firstName: "Hello",
+        lastName: "World",
+    });
+
+
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+
+
+    function handleNameChange() {
+        setName({
+            ...name,
+            firstName: firstName,
+            lastName: lastName
+        })
+    }
+
+
+    return (
+        //   Instead of <> you can use <Fragment>
+        <>
+            <input name="firstName" type="text" placeholder="First Name"
+                   onChange={event => setFirstName(event.target.value)}/>
+            <input name="lastName" type="text" placeholder="Last Name"
+                   onChange={event => setLastName(event.target.value)}/>
+
+            <button onClick={handleNameChange}>Display</button>
+
+            <h1>{name.firstName}</h1>
+            <h1>{name.lastName}</h1>
+        </>
+    )
+}
+
+export default App
