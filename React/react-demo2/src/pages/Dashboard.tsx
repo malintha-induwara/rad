@@ -2,7 +2,7 @@ import {useContext} from "react";
 import {CustomerContext} from "./CustomerProvider.tsx";
 
 export function Dashboard() {
-    const [customers, setCustomers] = useContext(CustomerContext);
+    const [customers] = useContext(CustomerContext);
     return (
         <>
             <h1> Dashboard </h1>

@@ -1,9 +1,15 @@
-import {createContext, useState} from "react";
+import {createContext, Dispatch, ReactNode, SetStateAction, useState} from "react";
 import {Customer} from "../model/Customer.ts";
 
-export const CustomerContext = createContext();
+type CustomerContextType = [Customer[], Dispatch<SetStateAction<Customer[]>>];
 
-export function CustomerProvider({children}) {
+export const CustomerContext = createContext<CustomerContextType>([[], () => {}]);
+
+interface CustomerProviderProps {
+    children: ReactNode;
+}
+
+export function CustomerProvider({children}:CustomerProviderProps) {
     const [customer, setCustomer] = useState<Customer[]>([]);
     return (
         <>
