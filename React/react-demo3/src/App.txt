@@ -1,0 +1,32 @@
+import './App.css'
+import {useReducer} from "react";
+
+enum TYPE {
+    INCREMENT,
+    DECREMENT,
+}
+
+function countReducer(state: number, action: { type: TYPE, payload: number }) {
+    switch (action.type) {
+        case TYPE.INCREMENT:
+            return state + action.payload;
+        case TYPE.DECREMENT:
+            return state - action.payload;
+        default:
+            return state;
+    }
+}
+
+
+function App() {
+    const [count, dispatch] = useReducer(countReducer, 0);
+    return (
+        <>
+            <h1> {count} </h1>
+            <button onClick={() => dispatch({type: TYPE.INCREMENT, payload: 1})}> INCREMENT</button>
+            <button onClick={() => dispatch({type: TYPE.DECREMENT, payload: 1})}> DECREMENT</button>
+        </>
+    )
+}
+
+export default App

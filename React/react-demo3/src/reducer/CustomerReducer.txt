@@ -1,0 +1,21 @@
+export enum TYPE {
+    UPDATE,
+}
+
+// const initialState = {
+//     firstName: 'No Value',
+//     lastName: 'No Value',
+// };
+
+export function customReducer(state: { firstName: string; lastName: string } , action: { type: TYPE; payload: { firstName: string; lastName: string } }
+) {
+    switch (action.type) {
+        case TYPE.UPDATE:
+            return {
+                ...state,
+                ...action.payload,
+            };
+        default:
+            return state;
+    }
+}
