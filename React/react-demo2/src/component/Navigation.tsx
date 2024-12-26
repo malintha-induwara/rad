@@ -5,7 +5,7 @@ export function Navigation() {
         <>
             <header>
                 <nav>
-                    <ul>
+                    <ul style={{listStyleType: 'none' , display:'flex', gap: '10px',fontSize:'20px'}} >
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/add"> Add </Link></li>
                         <li><Link to="/update"> Update </Link></li>
