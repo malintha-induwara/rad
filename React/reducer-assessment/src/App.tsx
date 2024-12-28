@@ -26,7 +26,9 @@ function App() {
   return (
     <>
       <CustomerProvider>
+        <ItemProvider>
           <RouterProvider router={routes} />
+        </ItemProvider>
       </CustomerProvider>
     </>
   );
