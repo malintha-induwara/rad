@@ -6,7 +6,7 @@ function Dashboard() {
   const [customers] = useContext(CustomerContext);
   const [items] = useContext(ItemContext);
   return (
-    <div className="max-w-4xl mx-auto pt-10 flex justify-between ">
+    <div className="max-w-5xl mx-auto pt-10 flex justify-between  ">
       <div>
         <h2 className="text-2xl font-bold mb-4 text-center">Customer Table</h2>
         <div className="overflow-x-auto">
