@@ -1,0 +1,6 @@
+import {createStore} from "redux";
+import {CustomerSlice} from "../reducers/CustomerSlice";
+
+
+const store = createStore(CustomerSlice);
+export default store;
