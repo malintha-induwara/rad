@@ -1,0 +1,19 @@
+export const initialState = {
+    count: 0,
+    isVisible:true,
+};
+
+function CountReducer (state=initialState,action){
+    switch(action.type){
+        case 'INCRIMENT':
+            return {...state,count:state.count+1};
+        case 'DECRIMENT':
+            return {...state,count:state.count-1};
+        case 'TOGLLE':
+            return {...state,isVisible:!state.isVisible};
+        default:
+            return state;
+    }
+}
+
+export default CountReducer;

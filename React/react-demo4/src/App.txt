@@ -1,0 +1,29 @@
+import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+
+function App() {
+
+    const Customer  = useSelector(state => state.customer.name);
+    const Item = useSelector(state => state.item);
+
+
+    // const dispatch = useDispatch();
+
+    return (
+        <div>
+            {isVisible && <div>Count: {count}</div>}
+            <br />
+            <button onClick={() => dispatch({ type: "INCRIMENT" })}>
+                Increment
+            </button>
+            <button onClick={() => dispatch({ type: "DECRIMENT" })}>
+                Decrement
+            </button>
+            <button onClick={() => dispatch({ type: "TOGLLE" })}>
+                {isVisible ? 'Hide Count' : 'Show Count'}
+            </button>
+        </div>
+    );
+}
+
+export default App;
