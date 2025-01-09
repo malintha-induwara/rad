@@ -4,7 +4,7 @@ import Customer from "../models/Customer";
 
 type CustomerContextType = [Customer[], Dispatch<CustomerAction>];
 
-export const CustomerContext = createContext<CustomerContextType>([[], () => {}]);
+  export const CustomerContext = createContext<CustomerContextType>([[], () => {}]);
 
 interface CustomerProviderProps {
   children: ReactNode;

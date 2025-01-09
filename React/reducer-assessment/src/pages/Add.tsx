@@ -8,7 +8,7 @@ import Customer from "../models/Customer";
 import Item from "../models/Item";
 import CustomerModel from "../components/CustomerModel";
 import ItemModel from "../components/ItemModel";
-
+  
 function Add() {
   const navigate = useNavigate();
   const [, customerDispatch] = useContext(CustomerContext);

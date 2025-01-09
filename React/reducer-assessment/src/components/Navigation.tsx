@@ -18,6 +18,7 @@ function Navigation() {
           <Link to='/delete' className="text-gray-600 hover:text-gray-900 hover:cursor-pointer">
             Delete
           </Link>
+          
         </ul>
       </nav>
     </header>
