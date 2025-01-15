@@ -2,6 +2,7 @@ import Item from "../models/Item";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: Item[] = [];
+
 const itemSlice = createSlice({
     name: 'item',
     initialState,
@@ -18,7 +19,6 @@ const itemSlice = createSlice({
         remove: (state, action) => {
             return state.filter(item => item.id !== action.payload.id);
         }
-    
     }
 });
 
