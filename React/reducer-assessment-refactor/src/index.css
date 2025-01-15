@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities{
+    .default-input-styles{
+        @apply block w-full rounded-md border border-gray-300 px-3 py-2 text-base outline-none focus:ring-2 focus:ring-sky-600 text-gray-900 placeholder:text-gray-400;
+    }
+}
